@@ -1,59 +1,53 @@
-import SectionHeading from "./SectionHeading";
-
-type Service = {
-  number: string;
-  title: string;
-  duration: string;
-  description: string;
-};
-
-const services: Service[] = [
+const services = [
   {
-    number: "01",
-    title: "Diagnostic & structuration",
-    duration: "3-6 mois",
-    description:
-      "Audit financier, gouvernance juridique, analyse de financabilite et plan de preparation investisseur.",
+    icon: "01",
+    title: "Diagnostic equity",
+    text: "Evaluation de la financabilite, des risques et des chantiers prioritaires avant ouverture du capital.",
   },
   {
-    number: "02",
-    title: "Preparation & formation",
-    duration: "2-3 mois",
-    description:
-      "Valorisation DCF, projections, teaser, memorandum d'information, pitch deck et data room.",
+    icon: "02",
+    title: "Structuration financiere",
+    text: "Business plan, valorisation, projections, indicateurs de pilotage et trajectoire de creation de valeur.",
   },
   {
-    number: "03",
-    title: "Roadshow & closing",
-    duration: "3-6 mois",
-    description:
-      "Ciblage des investisseurs, organisation du roadshow, term sheet, negociation et closing.",
+    icon: "03",
+    title: "Documentation investisseur",
+    text: "Teaser, memorandum, pitch deck, data room et narration transactionnelle claire.",
   },
   {
-    number: "04",
-    title: "Post-closing & sortie",
-    duration: "12-36 mois",
-    description:
-      "Reporting, relation investisseurs et strategie de sortie : IPO, trade sale ou management buy-out.",
+    icon: "04",
+    title: "Roadshow qualifie",
+    text: "Ciblage de fonds, family offices et partenaires strategiques adaptes au profil de l'entreprise.",
+  },
+  {
+    icon: "05",
+    title: "Negociation & closing",
+    text: "Appui sur la term sheet, coordination des conseils et preparation des decisions de gouvernance.",
+  },
+  {
+    icon: "06",
+    title: "Post-investissement",
+    text: "Reporting, relation investisseurs et preparation des scenarios de sortie.",
   },
 ];
 
 export default function Services() {
   return (
-    <section className="services section-shell" id="services">
-      <SectionHeading
-        eyebrow="Services"
-        title="Quatre modules pour passer de l'intention a la transaction."
-        description="Un accompagnement complet, calibre pour reduire les frictions entre dirigeants, investisseurs et conseils."
-        align="center"
-      />
-      <div className="card-grid card-grid--four">
+    <section className="services section-padding" id="services">
+      <div className="section-heading section-heading--center">
+        <span className="eyebrow">Services</span>
+        <h2>Une chaine complete, du diagnostic au closing.</h2>
+        <p>
+          Chaque service reduit l&apos;incertitude et renforce la qualite du
+          dossier presente aux investisseurs.
+        </p>
+      </div>
+      <div className="services__grid">
         {services.map((service) => (
-          <article className="service-card" key={service.number}>
-            <span className="service-card__number">{service.number}</span>
-            <p className="service-card__duration">{service.duration}</p>
+          <article className="service-card" key={service.title}>
+            <span className="service-card__icon">{service.icon}</span>
             <h3>{service.title}</h3>
-            <p>{service.description}</p>
+            <p>{service.text}</p>
           </article>
         ))}
       </div>

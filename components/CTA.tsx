@@ -1,26 +1,15 @@
-const benefits = [
-  "Diagnostic gratuit",
-  "Places limitees aux PME pilotes",
-  "Success fee aligne au closing",
-];
-
 export default function CTA() {
   return (
-    <section className="cta section-shell" id="contact">
+    <section className="cta section-padding" id="contact">
       <div className="cta__inner">
-        <span className="eyebrow">Contact</span>
-        <h2>Pret a tester votre maturite investisseur ?</h2>
+        <span className="badge badge--gold">Places PME pilotes limitees</span>
+        <h2>Identifiez votre niveau de preparation investisseur.</h2>
         <p>
-          Demandez un premier diagnostic pour identifier les ecarts entre votre
-          situation actuelle et les attentes d&apos;un investisseur en capital.
+          Recevez un premier diagnostic pour clarifier vos priorites de
+          structuration, vos besoins de capital et les attentes du marche.
         </p>
-        <div className="cta__benefits">
-          {benefits.map((benefit) => (
-            <span key={benefit}>{benefit}</span>
-          ))}
-        </div>
         <a
-          className="button button--primary"
+          className="button button--light"
           href="mailto:betina.ndzengue.babong@capaccess-advisory.com"
         >
           Prendre rendez-vous

@@ -1,55 +1,57 @@
 import Image from "next/image";
-import NavBar from "./NavBar";
 
-const stats = [
-  { value: "x4", label: "patrimoine potentiel" },
-  { value: "0%", label: "interets bancaires" },
-  { value: "10", label: "PME pilotes" },
+const navItems = [
+  { label: "A propos", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Avantages", href: "#features" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Hero() {
   return (
-    <section className="hero section-shell" id="top">
-      <NavBar />
-      <div className="hero__grid">
-        <div className="hero__content animate-in">
-          <span className="eyebrow">Cabinet advisory - zone UEMOA</span>
-          <h1>L&apos;equity comme levier premium de croissance PME.</h1>
-          <p>
-            CapAccess Advisory structure et accompagne les levees de fonds des
-            PME africaines, du diagnostic financier au closing investisseur.
-          </p>
-          <div className="hero__actions">
-            <a className="button button--primary" href="#contact">
-              Demander un diagnostic
-            </a>
-            <a className="button button--ghost" href="#services">
-              Voir l&apos;offre
-            </a>
-          </div>
-          <div className="hero__stats" aria-label="Indicateurs cles">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+    <section className="hero" id="top">
+      <div className="hero__image" aria-hidden="true">
+        <Image
+          src="/building.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="image-cover"
+        />
+      </div>
 
-        <div className="hero__visual animate-in animate-in--delay">
-          <Image
-            src="/building.jpg"
-            alt="Immeuble de bureaux moderne"
-            fill
-            priority
-            sizes="(max-width: 900px) 100vw, 46vw"
-            className="image-cover"
-          />
-          <div className="hero__panel">
-            <span>Equity readiness</span>
-            <strong>Diagnostic, structuration, roadshow, closing.</strong>
-          </div>
+      <header className="navbar">
+        <a className="brand" href="#top" aria-label="CapAccess Advisory">
+          <span>CAA</span>
+          <strong>CapAccess Advisory</strong>
+        </a>
+        <nav className="navbar__links" aria-label="Navigation principale">
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <a className="button button--light" href="#contact">
+          Diagnostic
+        </a>
+      </header>
+
+      <div className="hero__content">
+        <span className="badge badge--gold">Equity advisory pour PME UEMOA</span>
+        <h1>Structurer la croissance avec un capital patient et ambitieux.</h1>
+        <p>
+          CapAccess Advisory accompagne les dirigeants de PME africaines dans la
+          preparation, la levee de fonds et la relation investisseur.
+        </p>
+        <div className="hero__actions">
+          <a className="button button--primary" href="#contact">
+            Demander un diagnostic
+          </a>
+          <a className="button button--secondary" href="#services">
+            Explorer l&apos;offre
+          </a>
         </div>
       </div>
     </section>
