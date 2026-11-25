@@ -15,7 +15,7 @@ const team = [
     expertise: ["Expertise 1", "Expertise 2", "Expertise 3"],
   },
   {
-    name: "Paul BONGUI",
+    name: "Paul-David BOGUI",
     role: "Fonction à préciser",
     years: "— ans d'expérience",
     bio: "Parcours à compléter : formations, institutions, opérations de financement menées.",
