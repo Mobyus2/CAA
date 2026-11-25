@@ -1,31 +1,25 @@
 const features = [
   "Capital sans remboursement mensuel",
-  "Investisseurs alignes sur la creation de valeur",
-  "Gouvernance et reporting renforces",
-  "Preparation aux due diligences",
-  "Strategie de sortie anticipee",
-  "Reseau specialise PME africaines",
+  "Investisseurs alignés sur la création de valeur",
+  "Gouvernance et reporting renforcés",
+  "Préparation aux due diligences",
+  "Stratégie de sortie anticipée",
+  "Accès à un réseau spécialisé PME africaines",
 ];
 
 export default function Features() {
   return (
-    <section className="features section-padding" id="features">
-      <div className="section-heading">
-        <span className="eyebrow">Avantages</span>
-        <h2>Une approche premium pour financer sans fragiliser.</h2>
-        <p>
-          L&apos;equity apporte plus qu&apos;un financement : il installe une
-          discipline de pilotage et une trajectoire institutionnelle.
-        </p>
-      </div>
-      <div className="features__grid">
-        {features.map((feature, index) => (
-          <article className="feature-card" key={feature}>
-            <span className="badge badge--gold">0{index + 1}</span>
-            <h3>{feature}</h3>
-            <div className="gold-line" />
-          </article>
-        ))}
+    <section className="band">
+      <div className="container band__inner">
+        <div>
+          <p className="kicker kicker--gold">Les avantages de l&apos;equity</p>
+          <h2>Financer la croissance sans fragiliser la trésorerie.</h2>
+        </div>
+        <ul className="checklist">
+          {features.map((f) => (
+            <li key={f}>{f}</li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -1,33 +1,28 @@
-const footerLinks = [
-  { label: "A propos", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Avantages", href: "#features" },
-  { label: "Contact", href: "#contact" },
-];
+import Link from "next/link";
+import { CONTACT_EMAIL, navItems } from "./site";
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <div>
-        <a className="brand brand--footer" href="#top">
-          <span>CAA</span>
-          <strong>CapAccess Advisory</strong>
-        </a>
-        <p>Structurer. Financer. Accompagner.</p>
+      <div className="container footer__inner">
+        <div>
+          <p className="footer__brand">CAP Advisory Partners</p>
+          <p>Structurer. Financer. Accompagner.</p>
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+        </div>
+        <nav aria-label="Navigation de pied de page">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href}>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+        <nav aria-label="Informations légales">
+          <Link href="/mentions-legales">Mentions légales</Link>
+          <Link href="/confidentialite">Politique de confidentialité</Link>
+        </nav>
       </div>
-      <nav className="footer__nav" aria-label="Navigation de pied de page">
-        {footerLinks.map((link) => (
-          <a key={link.href} href={link.href}>
-            {link.label}
-          </a>
-        ))}
-      </nav>
-      <a
-        className="footer__contact"
-        href="mailto:betina.ndzengue.babong@capaccess-advisory.com"
-      >
-        betina.ndzengue.babong@capaccess-advisory.com
-      </a>
+      <p className="footer__copy">© {new Date().getFullYear()} CAP Advisory Partners. Tous droits réservés.</p>
     </footer>
   );
 }

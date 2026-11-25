@@ -1,38 +1,40 @@
 import Image from "next/image";
 
 const stats = [
-  { value: "4", label: "modules de preparation" },
-  { value: "0%", label: "dette bancaire ajoutee" },
-  { value: "10", label: "PME pilotes ciblees" },
+  { value: "6", label: "modules d'accompagnement" },
+  { value: "3", label: "PME pilotes en cours" },
+  { value: "0 %", label: "de dette ajoutée" },
 ];
 
 export default function About() {
   return (
-    <section className="about section-padding" id="about">
-      <div className="about__media">
-        <Image
-          src="/reunion.jpg"
-          alt="Equipe de direction en reunion de travail"
-          fill
-          sizes="(max-width: 900px) 100vw, 45vw"
-          className="image-cover"
-        />
-      </div>
-      <div className="about__content">
-        <span className="eyebrow">Presentation</span>
-        <h2>Un cabinet concu pour rendre les PME lisibles aux investisseurs.</h2>
-        <p>
-          Nous transformons une ambition de croissance en dossier investisseur
-          credible : gouvernance, chiffres, valorisation, documentation,
-          roadshow et closing.
-        </p>
-        <div className="about__stats">
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <strong>{stat.value}</strong>
-              <span>{stat.label}</span>
-            </div>
-          ))}
+    <section className="section" id="about">
+      <div className="container about">
+        <div className="about__media">
+          <Image
+            src="/reunion.jpg"
+            alt="Équipe de direction en réunion de travail"
+            fill
+            sizes="(max-width: 900px) 100vw, 45vw"
+            className="image-cover"
+          />
+        </div>
+        <div>
+          <p className="kicker">Le cabinet</p>
+          <h2>Rendre les PME lisibles et crédibles aux yeux des investisseurs.</h2>
+          <p className="lead">
+            Nous transformons une ambition de croissance en dossier investisseur
+            solide : gouvernance, chiffres, valorisation, documentation, roadshow
+            et closing.
+          </p>
+          <dl className="stats">
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <dt>{stat.value}</dt>
+                <dd>{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>
